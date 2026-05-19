@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { project, STITCH_DESIGN_URL } from '../data/project'
+import { DOCS_URL, project, STITCH_DESIGN_URL } from '../data/project'
 import './ProjectPage.css'
 
 export default function ProjectPage() {
@@ -14,8 +15,13 @@ export default function ProjectPage() {
       <div className="project-page__hero-wrap">
         <div className="container project-page__hero">
           <div className="project-page__hero-copy">
-            <p className="project-page__kicker">Premium execution</p>
-            <h1>{project.name}</h1>
+            <Link to="/" className="project-page__back">
+              ← Back home
+            </Link>
+            <div className="project-page__brand-row">
+              <img src={project.logo} alt={`${project.name} logo`} className="project-page__logo" />
+              <h1>{project.name}</h1>
+            </div>
             <p className="project-page__lead">{project.tagline}</p>
 
             <div className="project-page__ctas">
@@ -28,7 +34,12 @@ export default function ProjectPage() {
                 View Stitch design ↗
               </a>
 
-              <a href="/project#projects" className="project-page__link muted">
+              <a
+                href={DOCS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-page__link"
+              >
                 View docs ↗
               </a>
             </div>
@@ -49,10 +60,8 @@ export default function ProjectPage() {
       <section className="container project-page__description">
         <h3 className="section-label">Project Description</h3>
         <p className="project-page__description-text">{project.brief}</p>
-      </section>
 
-      <section className="container project-page__overview">
-        <div className="project-page__highlights">
+        <div className="project-page__highlights project-page__highlights--description">
           {project.highlights.map((h, i) => (
             <article key={h.label} className="project-page__highlight-card">
               <span className="project-page__highlight-index">0{i + 1}</span>
@@ -61,10 +70,11 @@ export default function ProjectPage() {
             </article>
           ))}
         </div>
+      </section>
 
-        <aside className="project-page__how">
-          <h3>How it works</h3>
-          <p>
+      <section className="project-page__how container">
+        <h3 className="section-label">How it works</h3>
+        <p>
             The architecture of BroFocus is built on three pillars: invisibility, speed, and
             ritual. We believe the best interface is the one that disappears when you are in your
             flow.
@@ -75,12 +85,11 @@ export default function ProjectPage() {
             <li>Hardware-accelerated rendering for zero input lag.</li>
             <li>Built-in rituals to protect your biological flow.</li>
           </ul>
-        </aside>
-      </section>
+        </section>
 
       <section className="project-page__rigor">
         <div className="container project-page__rigor-inner">
-          <h2>Technical Rigor</h2>
+          <h2>Tech Stack</h2>
           <p className="project-page__rigor-sub">Engineered from the metal up for uncompromising performance and stability.</p>
 
           <div className="project-page__rigor-grid">
@@ -99,15 +108,15 @@ export default function ProjectPage() {
         <p className="project-page__stitch-desc">The aesthetic foundation of BroFocus.</p>
 
         <div className="project-page__gallery">
-          {Array.from({ length: 7 }).map((_, i) => (
-            <div key={i} className="project-page__gallery-item">
-              <img
-                src={`https://images.unsplash.com/photo-15${i}505?auto=format&fit=crop&w=800&q=60`}
-                alt={`gallery ${i + 1}`}
-                loading="lazy"
-              />
-            </div>
-          ))}
+          <div className="project-page__gallery-item">
+            <img src="/focus.png" alt="Resource preview" />
+          </div>
+          <div className="project-page__gallery-item">
+            <img src="/focus.png" alt="Dashboard preview" />
+          </div>
+          <div className="project-page__gallery-item">
+            <img src="/focus.png" alt="Focus preview" />
+          </div>
         </div>
       </section>
     </motion.main>

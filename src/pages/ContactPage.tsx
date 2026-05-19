@@ -78,15 +78,15 @@ export default function ContactPage() {
           ) : (
             <form className="contact-page__form" onSubmit={handleSubmit}>
               <label className="contact-page__field">
-                <span>Name</span>
+                <span>Email</span>
                 <input
-                  type="text"
-                  name="name"
+                  type="email"
+                  name="email"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  placeholder="Your name"
-                  autoComplete="name"
+                  placeholder="Your email"
+                  autoComplete="email"
                 />
               </label>
 
@@ -102,7 +102,7 @@ export default function ContactPage() {
                 />
               </label>
 
-              <button type="submit" className="contact-page__submit">
+              <button type="submit" className="contact-page__submit hero__cta">
                 Submit
               </button>
             </form>

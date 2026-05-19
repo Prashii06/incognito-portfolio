@@ -17,6 +17,42 @@
   align-items: center;
 }
 
+.project-page__back {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+.project-page__back:hover {
+  color: var(--purple);
+}
+
+.project-page__brand-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-page__logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  padding: 0.2rem;
+}
+
+.project-page__hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+}
+
 .project-page__kicker {
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -34,21 +70,24 @@
 
 .project-page__ctas {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
   align-items: center;
 }
 
 .project-page__link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.9rem 1.2rem;
+  gap: 0.4rem;
+  padding: 0.72rem 1rem;
+  font-size: 0.85rem;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--purple), var(--purple-dark));
   color: #fff;
   font-weight: 700;
   text-decoration: none;
 }
+
 
 .project-page__link.muted {
   background: transparent;
@@ -69,23 +108,50 @@
   border-radius: 12px;
 }
 
-.project-page__description {
-  text-align: center;
+.project-page__description, .project-page__how {
+  text-align: left;
   margin: 3.5rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 24px;
+  border: 1px solid rgba(139, 92, 246, 0.12);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.project-page__how {
+  background: rgba(248, 241, 255, 0.94);
+}
+
+.project-page__how h3,
+.project-page__description .section-label {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-family: var(--font-sans);
+  font-weight: 1000;
+  font-size: 1.25rem;
+  text-align: center;
+  color: var(--black);
+}
+
+.project-page__description-text,
+.project-page__how p,
+.project-page__how li {
+  font-family: var(--font-sans);
 }
 
 .project-page__description-text {
   max-width: 72ch;
-  margin: 1rem auto 0;
+  margin: 0 auto;
   color: var(--charcoal);
-  line-height: 1.9;
+  line-height: 1.95;
 }
 
 .project-page__overview {
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 2.5rem;
-  align-items: start;
+  align-items: center;
   margin-top: 2.5rem;
 }
 
@@ -93,6 +159,10 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
+}
+
+.project-page__highlights--description {
+  margin-top: 2rem;
 }
 
 .project-page__highlight-card {
@@ -171,23 +241,62 @@
 
 .project-page__gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
   margin-top: 1.5rem;
+}
+.project-page__gallery-item1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 22px;
+  border: 1px solid rgba(139, 92, 246, 0.12);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s var(--spring), box-shadow 0.3s ease;
+}
+
+.project-page__gallery-item1:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.project-page__gallery-item1 img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: fill;
+  border-radius: 16px;
 }
 
 .project-page__gallery-item {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 22px;
+  border: 1px solid rgba(139, 92, 246, 0.12);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s var(--spring), box-shadow 0.3s ease;
+}
+
+.project-page__gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
 }
 
 .project-page__gallery-item img {
-  display: block;
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: fill;
+  border-radius: 16px;
 }
 
 @media (max-width: 1024px) {

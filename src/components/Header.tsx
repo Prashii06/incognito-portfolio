@@ -9,6 +9,7 @@ const nav = [
   { href: '#home', label: 'Home', id: 'home' as const },
   { href: '#team', label: 'Team', id: 'team' as const },
   { href: '#projects', label: 'Projects', id: 'projects' as const },
+  { href: '/contact', label: 'Contact', id: 'contact' as const },
 ]
 
 export default function Header() {
@@ -28,6 +29,11 @@ export default function Header() {
     if (!isHome) return
     const el = document.querySelector(hash)
     el?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const resolveHref = (href: string) => {
+    if (href.startsWith('/')) return href
+    return `${prefix}${href}`
   }
 
   return (
@@ -55,10 +61,10 @@ export default function Header() {
           {nav.map((item) => (
             <a
               key={item.href}
-              href={`${prefix}${item.href}`}
+              href={resolveHref(item.href)}
               className={`header__link ${isHome && activeSection === item.id ? 'header__link--active' : ''}`}
               onClick={(e) => {
-                if (isHome) {
+                if (isHome && item.href.startsWith('#')) {
                   e.preventDefault()
                   scrollTo(item.href)
                 }

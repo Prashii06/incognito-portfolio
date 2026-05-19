@@ -63,6 +63,13 @@
   color: var(--obsidian);
 }
 
+.hero__headline--quoted {
+  margin: 0;
+  padding: 0;
+  border: none;
+  quotes: none;
+}
+
 .hero__accent {
   font-family: var(--font-serif);
   font-style: italic;
@@ -75,10 +82,10 @@
 
 .hero__sub {
   margin-top: 1.75rem;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
-  line-height: 1.75;
+  font-size: clamp(0.92rem, 1.9vw, 1.05rem);
+  line-height: 1.8;
   color: var(--charcoal);
-  max-width: 580px;
+  max-width: 720px;
   margin-inline: auto;
 }
 

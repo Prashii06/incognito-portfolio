@@ -20,8 +20,9 @@
 .product__image {
   width: 100%;
   aspect-ratio: 4/3;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
+  border: 2px solid var(--purple-light);
 }
 
 .product__image-overlay {

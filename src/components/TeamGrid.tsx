@@ -15,7 +15,7 @@ export default function TeamGrid() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <p className="team__label">The Operative Registry</p>
+          <p className="team__label">Our Squad</p>
           <h2 className="team__title">Master Architects behind the Shadows</h2>
         </motion.header>
 

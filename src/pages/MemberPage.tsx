@@ -4,6 +4,9 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { teamMembers } from '../data/team'
 import MemberPhoto from '../components/MemberPhoto'
+import BrandMark from '../components/BrandMark'
+import MemberBackButton from '../components/MemberBackButton'
+import '../components/Hero.css'
 import './MemberPage.css'
 
 export default function MemberPage() {
@@ -37,7 +40,9 @@ export default function MemberPage() {
       style={{ '--page-accent': member.accent } as CSSProperties}
     >
       <nav className="member-topbar">
-        <div className="brand">Incognito _</div>
+        <div className="brand">
+          <BrandMark size="header" />
+        </div>
         <div className="nav-links">
           <Link to="/">HOME</Link>
           <Link to="/#team">TEAM</Link>
@@ -47,6 +52,8 @@ export default function MemberPage() {
       </nav>
 
       <div className="member-main container">
+        <MemberBackButton accent={member.accent} />
+
         <section className="member-hero">
           <div className="hero-copy">
             <div className="hero-tags">
@@ -57,7 +64,7 @@ export default function MemberPage() {
 
             <h1 className="hero-name">{member.name}</h1>
 
-            <blockquote className="hero-quote">"{member.motto}"</blockquote>
+            <blockquote className="hero-quote">&ldquo;{member.motto}&rdquo;</blockquote>
 
             <div className="hero-bios">
               <p className="hero-bio-main">{member.fullBio}</p>
@@ -66,12 +73,16 @@ export default function MemberPage() {
 
             <div className="hero-social">
               {member.social.linkedin && (
-                <a href={member.social.linkedin} target="_blank" rel="noreferrer">LINKEDIN</a>
+                <a href={member.social.linkedin} target="_blank" rel="noreferrer">
+                  LinkedIn
+                </a>
               )}
               {member.social.github && (
-                <a href={member.social.github} target="_blank" rel="noreferrer">GITHUB</a>
+                <a href={member.social.github} target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
               )}
-              {member.social.email && <a href={member.social.email}>EMAIL</a>}
+              {member.social.email && <a href={member.social.email}>Email</a>}
             </div>
           </div>
 
@@ -105,21 +116,25 @@ export default function MemberPage() {
           <div className="cta-copy">
             <h2>Build the engine.</h2>
             <p>
-              {member.name} is currently accepting collaborators for the V3 Kernel Project. Interested
-              in pushing the limits of system performance?
+              {member.name} is currently accepting collaborators for the V3 Kernel Project. Interested in
+              pushing the limits of system performance?
             </p>
-            <Link to="/contact" className="cta-button">GET IN TOUCH</Link>
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
+              <Link to="/contact" className="hero__cta member-cta__link">
+                Get in touch
+                <span className="hero__cta-arrow" aria-hidden>
+                  →
+                </span>
+              </Link>
+            </motion.div>
           </div>
         </section>
       </div>
 
       <footer className="member-footer">
         <div className="footer-inner container">
-          <div className="brand">Incognito _</div>
-          <div className="footer-links">
-            <Link to="/project">BroFocus</Link>
-            <Link to="/#team">Team</Link>
-            <Link to="/contact">Contact</Link>
+          <div className="brand">
+            <BrandMark size="footer" />
           </div>
         </div>
       </footer>

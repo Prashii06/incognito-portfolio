@@ -1,25 +1,20 @@
 export const STITCH_DESIGN_URL =
   'https://stitch.withgoogle.com/projects/12900746201405881087'
 
-export const DOCS_URL = '/project'
+export const DOCS_URL = 'https://github.com/Prashii06/PrachiGupta/blob/main/BroFocus_Complete_Documentation%20(1).docx'
 
 export const project = {
+  logo:"/bro.png",
   name: 'BroFocus',
-  tagline: 'Your focus, reframed — a premium companion for deep work and brotherhood accountability.',
+  tagline: 'Less procrastination & more optimization. Let us get after it, Bro !',
   brief:
-    'BroFocus is Incognito’s flagship product: a calm, gallery-grade focus app that blends AI-powered session planning, gentle accountability between friends, and luxury-minimal UI. We are building it for people who want flow without noise.',
+    'BroFocus is an advanced AI-powered productivity platform designed to seamlessly manage schedules, tasks and meetings through integrations with Google Workspace tools. It features an intelligent "Smart Planner" for automated time-blocking , multimodal voice and image inputs and a gamified dashboard to help users track and optimize their daily productivity.',
   status: 'In active development',
   highlights: [
-    { label: 'Focus Sessions', desc: 'Timed deep-work blocks with ambient cues and smart breaks.' },
-    { label: 'Bro Circles', desc: 'Small accountability groups with respectful nudges, not guilt.' },
-    { label: 'AI Coach', desc: 'Personalized plans that learn your rhythm without oversharing.' },
-    { label: 'Stitch → Ship', desc: 'Designs prototyped in Google Stitch, refined in our design system.' },
+     { label: 'Routine Planner', desc: 'A clean timeline visualization for organizing your daily and weekly schedules into productive time blocks.' },   
+    { label: 'The Smart Planner', desc: 'Intelligently finds free calendar slots, avoids overlaps, and creates realistic goals based on your productivity patterns.' },   
+    { label: 'Omnipresent Assistant', desc: 'A persistent chatbot ready to answer contextual questions, retrieve info, and schedule meetings using natural language.' },   
+    { label: 'Analytics Hub', desc: 'Visual graphs, charts, and a gamified Productivity Bar tracking your focus hours and task completion statistics.' },
   ],
-  stack: ['React Native', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Redis', 'OpenAI'],
-  milestones: [
-    { phase: 'Discovery', status: 'done', note: 'User interviews & Stitch prototypes' },
-    { phase: 'MVP Core', status: 'active', note: 'Sessions, profiles, basic circles' },
-    { phase: 'AI Layer', status: 'upcoming', note: 'Coach & habit inference' },
-    { phase: 'Beta', status: 'upcoming', note: 'Closed launch with early bros' },
-  ],
-}
+ stack: ['React', 'Vite', 'Node.js', 'Express', 'Gemini', 'Google Cloud'],
+  }

@@ -20,10 +20,10 @@ export default function ProjectBrief() {
             transition={{ type: 'spring', stiffness: 260, damping: 24 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80"
+              src="/focus.png"
               alt="BroFocus focus environment on a desk setup"
               className="product__image"
-              loading="lazy"
+              loading="lazy" width={250} height={700}
             />
             <div className="product__image-overlay" aria-hidden />
           </motion.div>
@@ -36,12 +36,10 @@ export default function ProjectBrief() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <p className="product__label">Flagship Product</p>
-          <h2 className="product__title">BroFocus — The Future of Execution.</h2>
+          <p className="product__label">Internship Project</p>
+          <h2 className="product__title">BroFocus — The Future of Work & Productivity</h2>
           <p className="product__text">
-            A gallery-grade focus environment engineered for deep work. BroFocus strips away
-            digital noise to reveal a high-performance interface where your attention is the only
-            metric that matters.
+            BroFocus is a next-generation AI productivity tracker built to streamline your workflow and supercharge deep work. By combining a one-click Google Workspace integration hub with advanced multimodal AI, BroFocus acts as your ultimate intelligent assistant. Interact seamlessly via natural voice or text, execute real-time web searches for instant fact-checking, and leverage cutting-edge computer vision to extract actionable tasks directly from your screenshots, photos, and camera inputs. Stop chasing your tools—let your tools work for you.
           </p>
 
           <Link
