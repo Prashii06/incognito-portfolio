@@ -1,0 +1,140 @@
+.team {
+  padding: 5rem 0 6rem;
+  background: var(--grey-section);
+}
+
+.team__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.team__label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 0.75rem;
+}
+
+.team__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--obsidian);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.team__card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: box-shadow 0.4s var(--ease-out), transform 0.4s var(--spring);
+}
+
+.team__photo {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 1.25rem;
+}
+
+.team__photo img {
+  filter: grayscale(100%);
+  transition: filter 0.4s, transform 0.4s var(--ease-out);
+}
+
+.team__card:hover .team__photo img {
+  filter: grayscale(20%);
+  transform: scale(1.04);
+}
+
+.team__role-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #65a30d;
+  background: rgba(190, 242, 100, 0.35);
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.65rem;
+}
+
+.team__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--obsidian);
+}
+
+.team__motto {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  line-height: 1.45;
+}
+
+.team__bio {
+  font-size: 0.8rem;
+  color: var(--charcoal);
+  margin-top: 0.85rem;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.team__know {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  transition: gap 0.3s var(--spring), color 0.25s;
+}
+
+.team__know span {
+  transition: transform 0.3s var(--spring);
+}
+
+.team__know:hover {
+  color: var(--purple-dark);
+  gap: 0.55rem;
+}
+
+.team__know:hover span {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1024px) {
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+}

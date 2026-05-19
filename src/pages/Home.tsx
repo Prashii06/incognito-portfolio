@@ -1,0 +1,21 @@
+import { motion } from 'framer-motion'
+import Hero from '../components/Hero'
+import TeamGrid from '../components/TeamGrid'
+import ProjectBrief from '../components/ProjectBrief'
+import './Home.css'
+
+export default function Home() {
+  return (
+    <motion.main
+      className="home"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <Hero />
+      <TeamGrid />
+      <ProjectBrief />
+    </motion.main>
+  )
+}

@@ -1,0 +1,118 @@
+.product {
+  padding: 5rem 0 6rem;
+  background: var(--white);
+}
+
+.product__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.product__image-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.product__image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.product__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.15), rgba(139, 92, 246, 0.12));
+  pointer-events: none;
+}
+
+.product__label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 0.75rem;
+}
+
+.product__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--obsidian);
+}
+
+.product__text {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--charcoal);
+  max-width: 440px;
+}
+
+.product__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  padding: 0.9rem 1.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--purple);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+  transition: background 0.25s, box-shadow 0.35s, transform 0.35s var(--spring);
+}
+
+.product__cta:hover {
+  background: var(--purple-dark);
+  box-shadow: 0 12px 32px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.product__cta span {
+  transition: transform 0.3s var(--spring);
+}
+
+.product__cta:hover span {
+  transform: translateX(4px);
+}
+
+.product__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.product__link {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--obsidian);
+  transition: color 0.25s;
+}
+
+.product__link:hover {
+  color: var(--purple);
+}
+
+@media (max-width: 900px) {
+  .product__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
