@@ -100,7 +100,7 @@
 .contact-page__submit {
   align-self: flex-start;
   margin-top: 0.5rem;
-  padding: 0.9rem 2rem;
+  padding: 0.95rem 2rem;
   font-family: var(--font-nav);
   font-size: 0.75rem;
   font-weight: 700;
@@ -110,27 +110,11 @@
   background: linear-gradient(135deg, #ff6b9d 0%, #a66cff 50%, #4ecdc4 100%);
   background-size: 200% 200%;
   border-radius: 999px;
-  animation: contactCta 4s ease infinite;
-  transition: transform 0.35s var(--spring);
-}
-
-.contact-page__submit {
-  align-self: flex-start;
-  margin-top: 0.5rem;
-  padding: 0.85rem 1.8rem;
-  font-family: var(--font-nav);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #fff;
-  border-radius: 999px;
+  box-shadow: 0 8px 28px rgba(139, 92, 246, 0.18);
   transition: transform 0.25s var(--spring), box-shadow 0.25s;
 }
+
 .contact-page__submit:hover {
   transform: translateY(-3px);
-}
-  border-radius: 12px;
-  color: var(--charcoal);
-  line-height: 1.6;
+  box-shadow: 0 12px 36px rgba(139, 92, 246, 0.25);
 }
