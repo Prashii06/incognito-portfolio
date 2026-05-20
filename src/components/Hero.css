@@ -100,6 +100,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #fff;
+  background: #8b5cf6;
   background: var(--purple);
   border-radius: 999px;
   box-shadow: 0 8px 28px rgba(139, 92, 246, 0.35);
